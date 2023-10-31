@@ -6,7 +6,7 @@ import { BadRequestException, ValidationPipe } from '@nestjs/common';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
   app.enableCors({
-    origin: true, //process.env.CLIENT_URL
+    origin: process.env.CLIENT_URL, //process.env.CLIENT_URL
     credentials: true,
     allowedHeaders: [
       'Accept',
